@@ -8,7 +8,29 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    
+    <div class="header">
+        <h1>ETCH-A-SKETCH</h1>
+    </div>
+
+    <div class="main">
+        <div class="settings">
+            <div class="colorSelection"></div>
+            <button>Color Mode</button>
+            <button>Rainbow Mode</button>
+            <button>Eraser</button>
+            <button>Clear</button>
+            <div class="slideContainer">
+                <p>64 x 64</p>
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            </div>
+        </div>
+
+        <div class="canvas"></div>
+    </div>
+
+    <div class="footer">
+        <p>Created by <a href="https://github.com/bseright">Britain Seright</a></p>
+    </div>
 
     <script src="script.js"></script>
 </body>
