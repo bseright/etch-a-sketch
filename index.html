@@ -13,19 +13,46 @@
     </div>
 
     <div class="main">
-        <div class="settings">
-            <div class="colorSelection"></div>
-            <button>Color Mode</button>
-            <button>Rainbow Mode</button>
-            <button>Eraser</button>
-            <button>Clear</button>
-            <div class="slideContainer">
-                <p>64 x 64</p>
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-            </div>
-        </div>
-
         <div class="canvas"></div>
+
+        <div class="knobs">
+            <div class="knobColumn xKnob">
+                <img class="largeKnob" src="images/knob.png"/>
+                <p>X</p>
+            </div>
+
+            <button class="clearButton">CLEAR</button>
+
+            <div class="colorColumn">
+
+                <div class="colorSelection"></div>
+
+                <div class="colorKnobs">
+                    <div class="knobColumn">
+                        <img class="smallKnob" src="images/knob.png"/>
+                        <p>R</p>
+                    </div>
+
+                    <div class="knobColumn">
+                        <img class="smallKnob" src="images/knob.png"/>
+                        <p>G</p>
+                    </div>
+
+                    <div class="knobColumn">
+                        <img class="smallKnob" src="images/knob.png"/>
+                        <p>B</p>
+                    </div> 
+                </div>
+
+            </div> 
+
+            <button class="randomButton">RANDOM</button>
+
+            <div class="knobColumn yKnob">
+                <img class="largeKnob" src="images/knob.png"/>
+                <p>Y</p>
+            </div> 
+        </div>
     </div>
 
     <div class="footer">

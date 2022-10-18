@@ -13,11 +13,84 @@ body {
 
 .main {
     display: flex;
+    flex-direction: column;
     flex: 1;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    gap: 150px;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
+}
+
+.knobs {
+    display: flex;
+    gap: 5px;
+}
+
+.knobColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.knobColumn p {
+    margin: 0;
+}
+
+.largeKnob {
+    height: 75px;
+}
+
+.xKnob {
+    margin: 15px 30px 0 0;
+}
+
+.yKnob {
+    margin: 15px 0 0 30px;
+}
+
+.knobs button {
+    background-color: #04AA6D;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 5px solid #04AA6D;
+    border-radius: 5px;
+    height: 45px;
+}
+
+.knobs .clearButton {
+    padding: 0px 40px;
+    margin: 30px 40px 0 0;
+}
+
+.knobs .randomButton {
+    padding: 0px 29px;
+    margin: 30px 0 0 40px;
+}
+
+.smallKnob {
+    height: 60px;
+}
+
+.colorColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.colorSelection {
+    width: 198px;
+    height: 10px;
+    background-color: #04AA6D;
+    margin-top: 0px;
+    border-radius: 10px;
+}
+
+.colorKnobs {
+    display: flex;
+    gap: 10px;
 }
 
 .footer {
@@ -28,74 +101,13 @@ body {
 
 .header h1 {
     letter-spacing: 1px;
-}
-
-.settings {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
-    gap: 20px;
-}
-
-.colorSelection {
-    height: 100px;
-    width: 100px;
-    background-color: black;
-    border-radius: 100px;
-}
-
-.settings button {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-}
-
-.slideContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-}
-
-.slideContainer p {
-    margin-top: -1px;
-}
-
-.slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 5px;  
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-  }
-  
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    background: #04AA6D;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #04AA6D;
-    cursor: pointer;
+    color:rgb(32, 32, 32);
 }
 
 .canvas {
     height: 500px;
-    width: 500px;
-    background-color: black;
+    width: 800px;
+    background-color: rgb(32, 32, 32);
     box-shadow: 3px 3px 10px 1px rgb(141, 141, 141);
 }
 
