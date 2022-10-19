@@ -9,8 +9,13 @@ body {
 .header {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
     height: 100px;
-    letter-spacing: 1px;
+}
+
+.header img {
+    height: 50px;
+    opacity: .8;
 }
 
 .main {
@@ -20,7 +25,6 @@ body {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    padding-bottom: 70px;
 }
 
 .knobs {
@@ -36,19 +40,42 @@ body {
 }
 
 .knobColumn p {
-    margin: 0;
+    position: relative;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    -webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.colorKnobs p {
+    top: 13px;
+}
+
+.xColumn p, .yColumn p {
+    top: 19px;
 }
 
 .largeKnob {
     height: 75px;
+    position: absolute;
+    transition: all .25s ease-in-out;
 }
 
-.xKnob {
-    margin: 15px 30px 0 0;
+.largeKnob:hover {
+    height: 100px;
+    margin-top: -10px;
+    z-index:555555;
 }
 
-.yKnob {
-    margin: 15px 0 0 30px;
+.xColumn {
+    margin: 15px 60px 0 0;
+}
+
+.yColumn {
+    margin: 15px 0 0 60px;
 }
 
 .knobs button {
@@ -74,6 +101,14 @@ body {
 
 .smallKnob {
     height: 60px;
+    position: absolute;
+    transition: all .25s ease-in-out;
+}
+
+.smallKnob:hover {
+    height: 85px;
+    margin-top: -10px;
+    z-index:555555;
 }
 
 .colorColumn {
@@ -92,7 +127,8 @@ body {
 
 .colorKnobs {
     display: flex;
-    gap: 10px;
+    margin-left: 22.5px;
+    gap: 65px;
 }
 
 .footer {
