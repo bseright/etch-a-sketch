@@ -1,7 +1,7 @@
 let xKnob = document.querySelector(".xKnob");
 let xAngle = 0;
 
-xKnob.addEventListener('click', function() {
+xKnob.addEventListener('wheel', function() {
 
     function rotateX() {
         xAngle += 30;
@@ -14,7 +14,7 @@ xKnob.addEventListener('click', function() {
 let yKnob = document.querySelector(".yKnob");
 let yAngle = 0;
 
-yKnob.addEventListener('click', function() {
+yKnob.addEventListener('wheel', function() {
 
     function rotateY() {
         yAngle += 30;
@@ -27,7 +27,7 @@ yKnob.addEventListener('click', function() {
 let rKnob = document.querySelector(".rKnob");
 let rAngle = 0;
 
-rKnob.addEventListener('click', function() {
+rKnob.addEventListener('wheel', function() {
 
     function rotateR() {
         rAngle += 30;
@@ -40,7 +40,7 @@ rKnob.addEventListener('click', function() {
 let gKnob = document.querySelector(".gKnob");
 let gAngle = 0;
 
-gKnob.addEventListener('click', function() {
+gKnob.addEventListener('wheel', function() {
 
     function rotateG() {
         gAngle += 30;
@@ -53,7 +53,7 @@ gKnob.addEventListener('click', function() {
 let bKnob = document.querySelector(".bKnob");
 let bAngle = 0;
 
-bKnob.addEventListener('click', function() {
+bKnob.addEventListener('wheel', function() {
 
     function rotateB() {
         bAngle += 30;
