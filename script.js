@@ -72,7 +72,7 @@ secretDivX.addEventListener('wheel', function() {
   } else if (previousTopX < currentTopX || previousTopX === initialTopX && currentTopX === initialTopX) {
     console.log(previousTopX);
     console.log(currentTopX);
-		direction = "UP"; 
+		directionX = "UP"; 
   } else {
     console.log(previousTopX);
     console.log(currentTopX)
@@ -89,12 +89,24 @@ console.log(directionX);
 
 secretDivX.addEventListener('wheel', function() {
 
-    function rotateX() {
+    function rotateXClock() {
         xAngle += 30;
         xKnob.style.transform = `rotate(${xAngle}deg)`;
     };
 
-    rotateX();
+    function rotateXCounter() {
+        xAngle -= 30;
+        xKnob.style.transform = `rotate(${xAngle}deg)`;
+    };
+
+    if (directionX === "") {
+        // leaving empty to avoid umprompted back scroll
+    } else if (directionX === "DOWN") {
+        rotateXClock();
+    } else {
+        rotateXCounter();
+    }
+    
 });
 
 let yKnob = document.querySelector(".yKnob");
