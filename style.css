@@ -27,9 +27,81 @@ body {
     align-items: center;
 }
 
+.detectScroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.detectScrollColor {
+    display: flex;
+    margin: 0 5px 0 20px;
+}
+
+.secretDivX, .secretDivY {
+    width: 85px;
+    max-height: 80px;
+    overflow: scroll;
+    opacity: 1;
+}
+
+.secretDivX {
+    margin-left: -15px;
+    z-index: 55555;
+    opacity: 0;
+}
+
+.secretDivY {
+    margin: 0px -25px 0 5px;
+}
+
+.secretDivR, .secretDivG, .secretDivB {
+    width: 73px;
+    max-height: 70px;
+    overflow: scroll;
+    opacity: 1;
+}
+
+.scrollCanvasX, .scrollCanvasY, .scrollCanvasR, .scrollCanvasG, .scrollCanvasB {
+  background-color: red;
+  height: 1000px;
+  width: 50px
+}
+
+.scrollItemX, .scrollItemY, .scrollItemR, .scrollItemG, .scrollItemB {
+    background-color: blue;
+    position: relative;
+    top: 5px;
+    width: 25px;
+    min-height: 20px;
+}
+
+button {
+    background-color: #04AA6D;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 5px solid #04AA6D;
+    border-radius: 5px;
+    height: 45px;
+}
+
+.clearButton {
+    padding: 0px 40px;
+}
+
+.randomButton {
+    padding: 0px 29px;
+}
+
 .knobs {
     display: flex;
-    gap: 5px;
+    gap: 200px;
+    margin-top: -115px;
+    z-index: 1;
 }
 
 .knobColumn {
@@ -64,10 +136,11 @@ body {
     transition: all .25s ease-in-out;
 }
 
-.largeKnob:hover {
+.largeKnobHover {
     height: 100px;
     margin-top: -10px;
-    z-index:555555;
+    z-index: 1;
+    transition: all .25s ease-in-out;
 }
 
 .xColumn {
@@ -78,37 +151,17 @@ body {
     margin: 15px 0 0 60px;
 }
 
-.knobs button {
-    background-color: #04AA6D;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border: 5px solid #04AA6D;
-    border-radius: 5px;
-    height: 45px;
-}
-
-.knobs .clearButton {
-    padding: 0px 40px;
-    margin: 30px 40px 0 0;
-}
-
-.knobs .randomButton {
-    padding: 0px 29px;
-    margin: 30px 0 0 40px;
-}
-
 .smallKnob {
     height: 60px;
     position: absolute;
     transition: all .25s ease-in-out;
 }
 
-.smallKnob:hover {
+.smallKnobHover {
     height: 85px;
     margin-top: -10px;
-    z-index:555555;
+    z-index: 1;
+    transition: all .25s ease-in-out;
 }
 
 .colorColumn {

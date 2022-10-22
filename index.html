@@ -8,56 +8,94 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <div class="header">
-        <img src="images/title.png"/>
+<div class="header">
+    <img src="images/title.png"/>
+</div>
+
+<div class="main">
+  <div class="canvas"></div>
+
+  <div class="detectScroll">
+
+    <div class="secretDivX">
+      <div class="scrollCanvasX">
+        <div class="scrollItemX"></div>
+      </div>
     </div>
 
-    <div class="main">
-        <div class="canvas"></div>
+    <button class="clearButton">CLEAR</button>
 
-        <div class="knobs">
-            <div class="knobColumn xColumn">
-                <img class="largeKnob xKnob" src="images/knob.png"/>
-                <p>X</p>
-            </div>
+    <div class="detectScrollColor">
 
-            <button class="clearButton">CLEAR</button>
-
-            <div class="colorColumn">
-
-                <div class="colorSelection"></div>
-
-                <div class="colorKnobs">
-                    <div class="knobColumn">
-                        <img class="smallKnob rKnob" src="images/knob.png"/>
-                        <p>R</p>
-                    </div>
-
-                    <div class="knobColumn">
-                        <img class="smallKnob gKnob" src="images/knob.png"/>
-                        <p>G</p>
-                    </div>
-
-                    <div class="knobColumn">
-                        <img class="smallKnob bKnob" src="images/knob.png"/>
-                        <p>B</p>
-                    </div> 
-                </div>
-
-            </div> 
-
-            <button class="randomButton">RANDOM</button>
-
-            <div class="knobColumn yColumn">
-                <img class="largeKnob yKnob" src="images/knob.png"/>
-                <p>Y</p>
-            </div> 
+      <div class="secretDivR">
+        <div class="scrollCanvasR">
+          <div class="scrollItemR"></div>
         </div>
+      </div>
+
+      <div class="secretDivG">
+        <div class="scrollCanvasG">
+          <div class="scrollItemG"></div>
+        </div>
+      </div>
+
+      <div class="secretDivB">
+        <div class="scrollCanvasB">
+          <div class="scrollItemB"></div>
+        </div>
+      </div>
+    
     </div>
 
-    <div class="footer">
-        <p>Created by <a href="https://github.com/bseright">Britain Seright</a></p>
+    <button class="randomButton">RANDOM</button>
+
+    <div class="secretDivY">
+      <div class="scrollCanvasY">
+        <div class="scrollItemY"></div>
+      </div>
     </div>
+
+  </div>
+
+  <div class="knobs">
+    <div class="knobColumn xColumn">
+      <img class="largeKnob xKnob" src="https://bseright.github.io/hosted-assets/knob.png"/>
+      <p>X</p>
+    </div>
+
+    <div class="colorColumn">
+
+      <div class="colorSelection"></div>
+
+      <div class="colorKnobs">
+        <div class="knobColumn">
+          <img class="smallKnob rKnob" src="https://bseright.github.io/hosted-assets/knob.png"/>
+          <p>R</p>
+        </div>
+
+        <div class="knobColumn">
+          <img class="smallKnob gKnob" src="https://bseright.github.io/hosted-assets/knob.png"/>
+          <p>G</p>
+        </div>
+
+        <div class="knobColumn">
+          <img class="smallKnob bKnob" src="https://bseright.github.io/hosted-assets/knob.png"/>
+          <p>B</p>
+        </div> 
+      </div>
+
+    </div> 
+
+    <div class="knobColumn yColumn">
+      <img class="largeKnob yKnob" src="https://bseright.github.io/hosted-assets/knob.png"/>
+      <p>Y</p>
+    </div> 
+  </div>
+</div>
+
+<div class="footer">
+  <p>Created by <a href="https://github.com/bseright">Britain Seright</a></p>
+</div>
 
     <script src="script.js"></script>
 </body>
