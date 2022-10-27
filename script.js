@@ -591,7 +591,7 @@ secretDivB.addEventListener('wheel', function() {
 
 });
 
-// gKnob rotation animation
+// bKnob rotation animation
 function checkBRotation() {
 
     function rotateBClock() {

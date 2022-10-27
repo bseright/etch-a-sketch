@@ -9,12 +9,12 @@ body {
 .header {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     height: 100px;
 }
 
 .header img {
-    height: 43px;
+    height: 38px;
     opacity: .8;
 }
 
