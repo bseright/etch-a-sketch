@@ -85,7 +85,7 @@ secretDivX.addEventListener('wheel', function() {
         } 
 
         // saves the new position for iteration
-        previousTopX = currentTopX
+        previousTopX = currentTopX;
 
         console.log(directionX);
 
@@ -209,7 +209,7 @@ secretDivY.addEventListener('wheel', function() {
         } 
 
         // saves the new position for iteration
-        previousTopY = currentTopY
+        previousTopY = currentTopY;
 
         console.log(directionY);
 
@@ -509,7 +509,9 @@ let bAngle = 0;
 secretDivB.addEventListener('mouseover', function() {
     bKnob.classList.toggle("smallKnobHover");
 });
-
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
 secretDivB.addEventListener('mouseout', function() {
     bKnob.classList.toggle("smallKnobHover");
 });
