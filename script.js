@@ -10,8 +10,73 @@ let previousTopX;
 let xKnob = document.querySelector(".xKnob");
 let xAngle = 0;
 
+//
+//
+// creating grid
+//
+//
+const canvas = document.querySelector(".canvas");
+
+function makeDivs(numDivs) {
+    for (let d = 0; d < numDivs; d++) {
+        let gridItem = document.createElement("div");
+        gridItem.classList.add("gridItem");
+        canvas.appendChild(gridItem);
+    }
+}
+
+makeDivs(1000);
+
+//
+//
+// create function to get row and column position
+//
+/*
+function getGridItemPosition(index) {
+    const gridItem = document.querySelector(".gridItem");
+  
+    // our indexes are zero-based but gridColumns are 1-based, so subtract 1
+    let offset = Number(canvas.getComputedStyle(gridItem.children[0]).gridColumnStart) - 1; 
+  
+    // if we haven't specified the first child's grid column, then there is no offset
+    if (isNaN(offset)) {
+      offset = 0;
+    }
+
+    const colCount = canvas.getComputedStyle(gridItem).gridTemplateColumns.split(" ").length;
+  
+    const rowPosition = Math.floor((index + offset) / colCount);
+    const colPosition = (index + offset) % colCount;
+  
+    //Return an object with properties row and column
+    return { row: rowPosition, column: colPosition };
+  }
+  
+  function getNodeIndex(element) {
+    var c = element.parentNode.children,
+      i = 0;
+    for (; i < c.length; i++) if (c[i] == element) return i;
+  }
+
+function addClickEventsToGridItems() {
+    let gridItems = document.getElementsByClassName("gridItem");
+    for (let i = 0; i < gridItems.length; i++) {
+      gridItems[i].onclick = (e) => {
+        let position = getGridItemPosition(getNodeIndex(e.target));
+        console.log(`Node position is row ${position.row}, column ${position.column}`);
+      };
+    }
+  }
+  
+addClickEventsToGridItems();
+*/
+
+//
+//
 // assigning hover animations to knobs when secretDivs are hovered
 // xKnob hover animations
+//
+//
 secretDivX.addEventListener('mouseover', function() {
     xKnob.classList.toggle("largeKnobHover");
 });
@@ -72,22 +137,16 @@ secretDivX.addEventListener('wheel', function() {
 
         if (previousTopX < currentTopX || currentTopX === initialTopX) {
 
-            console.log(previousTopX);
-            console.log(currentTopX);
             directionX = "UP"; 
 
         } else {
 
-            console.log(previousTopX);
-            console.log(currentTopX)
             directionX = "DOWN";
 
         } 
 
         // saves the new position for iteration
         previousTopX = currentTopX;
-
-        console.log(directionX);
 
         checkXRotation();
 
@@ -196,22 +255,16 @@ secretDivY.addEventListener('wheel', function() {
 
         if (previousTopY < currentTopY || currentTopY === initialTopY) {
 
-            console.log(previousTopY);
-            console.log(currentTopY);
             directionY = "UP"; 
 
         } else {
 
-            console.log(previousTopY);
-            console.log(currentTopY)
             directionY = "DOWN";
 
         } 
 
         // saves the new position for iteration
         previousTopY = currentTopY;
-
-        console.log(directionY);
 
         checkYRotation();
 
@@ -320,22 +373,16 @@ secretDivR.addEventListener('wheel', function() {
 
         if (previousTopR < currentTopR || currentTopR === initialTopR) {
 
-            console.log(previousTopR);
-            console.log(currentTopR);
             directionR = "UP"; 
 
         } else {
 
-            console.log(previousTopR);
-            console.log(currentTopR)
             directionR = "DOWN";
 
         } 
 
         // saves the new position for iteration
         previousTopR = currentTopR;
-
-        console.log(directionR);
 
         checkRRotation();
 
@@ -443,22 +490,16 @@ secretDivG.addEventListener('wheel', function() {
 
         if (previousTopG < currentTopG || currentTopG === initialTopG) {
 
-            console.log(previousTopG);
-            console.log(currentTopG);
             directionG = "UP"; 
 
         } else {
 
-            console.log(previousTopG);
-            console.log(currentTopG)
             directionG = "DOWN";
 
         } 
 
         // saves the new position for iteration
         previousTopG = currentTopG;
-
-        console.log(directionG);
 
         checkGRotation();
 
@@ -568,22 +609,16 @@ secretDivB.addEventListener('wheel', function() {
 
         if (previousTopB < currentTopB || currentTopB === initialTopB) {
 
-            console.log(previousTopB);
-            console.log(currentTopB);
             directionB = "UP"; 
 
         } else {
 
-            console.log(previousTopB);
-            console.log(currentTopB)
             directionB = "DOWN";
 
         } 
 
         // saves the new position for iteration
         previousTopB = currentTopB;
-
-        console.log(directionB);
 
         checkBRotation();
 
