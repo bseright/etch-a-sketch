@@ -48,6 +48,20 @@ body {
     background-color: rgb(252, 252, 252);
 }
 
+.blinking {
+    color: rgb(32, 32, 32);
+    display: inline-block;
+    animation: blinkingBackground .75s infinite;
+    animation-direction: linear;
+}
+
+@keyframes blinkingBackground{
+    0% { opacity: 1; }
+    49% { opacity: 1; }
+    50% { opacity: 0; }
+   100% { opacity: 0; }
+}
+
 .detectScroll {
     display: flex;
     justify-content: center;

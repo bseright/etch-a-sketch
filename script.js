@@ -1,4 +1,49 @@
+//
+//
+// creating grid
+//
+//
+const canvas = document.querySelector(".canvas");
+
+function makeDivs(numDivs) {
+    let x = 1;
+    let y = 25;
+
+    for (let d = 0; d < numDivs; d++) {
+        let gridItem = document.createElement("div");
+
+        gridItem.classList.add(`gridColumn${x}`);
+        gridItem.classList.add(`gridRow${y}`);
+
+        if (x === 40) {
+            x = 1;
+            y--;
+        } else {
+            x++;
+        }
+
+        canvas.appendChild(gridItem);
+    }
+}
+
+makeDivs(1000);
+
+//
+//
+// creating function to obtain active row and column with knob interaction
+//
+//
+let activeColumn = 1;
+let activeRow = 1;
+let activeCell = document.getElementsByClassName(`gridColumn${activeColumn} gridRow${activeRow}`);
+
+activeCell.item(0).classList.toggle("blinking");
+
+//
+//
 // Initial state xKnob
+//
+//
 let directionX = "";
 let secretDivX = document.querySelector(".secretDivX");
 let scrollItemX = document.querySelector(".scrollItemX");
@@ -9,67 +54,6 @@ let previousTopX;
 
 let xKnob = document.querySelector(".xKnob");
 let xAngle = 0;
-
-//
-//
-// creating grid
-//
-//
-const canvas = document.querySelector(".canvas");
-
-function makeDivs(numDivs) {
-    for (let d = 0; d < numDivs; d++) {
-        let gridItem = document.createElement("div");
-        gridItem.classList.add("gridItem");
-        canvas.appendChild(gridItem);
-    }
-}
-
-makeDivs(1000);
-
-//
-//
-// create function to get row and column position
-//
-/*
-function getGridItemPosition(index) {
-    const gridItem = document.querySelector(".gridItem");
-  
-    // our indexes are zero-based but gridColumns are 1-based, so subtract 1
-    let offset = Number(canvas.getComputedStyle(gridItem.children[0]).gridColumnStart) - 1; 
-  
-    // if we haven't specified the first child's grid column, then there is no offset
-    if (isNaN(offset)) {
-      offset = 0;
-    }
-
-    const colCount = canvas.getComputedStyle(gridItem).gridTemplateColumns.split(" ").length;
-  
-    const rowPosition = Math.floor((index + offset) / colCount);
-    const colPosition = (index + offset) % colCount;
-  
-    //Return an object with properties row and column
-    return { row: rowPosition, column: colPosition };
-  }
-  
-  function getNodeIndex(element) {
-    var c = element.parentNode.children,
-      i = 0;
-    for (; i < c.length; i++) if (c[i] == element) return i;
-  }
-
-function addClickEventsToGridItems() {
-    let gridItems = document.getElementsByClassName("gridItem");
-    for (let i = 0; i < gridItems.length; i++) {
-      gridItems[i].onclick = (e) => {
-        let position = getGridItemPosition(getNodeIndex(e.target));
-        console.log(`Node position is row ${position.row}, column ${position.column}`);
-      };
-    }
-  }
-  
-addClickEventsToGridItems();
-*/
 
 //
 //
