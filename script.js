@@ -121,10 +121,10 @@ secretDivX.addEventListener('wheel', function() {
 
         if (previousTopX < currentTopX || currentTopX === initialTopX) {
 
-            directionX = "UP"; 
+            directionX = "UP";
 
         } else {
-
+            
             directionX = "DOWN";
 
         } 
@@ -144,11 +144,37 @@ function checkXRotation() {
     function rotateXClock() {
         xAngle += 27;
         xKnob.style.transform = `rotate(${xAngle}deg)`;
+
+        // preventing the active column from being set to beyond the canvas max
+        if (activeColumn === 40) {
+
+        } else {
+            activeColumn++;
+            activeCell.item(0).classList.toggle("blinking"); // removing blinking class from current activeCell
+            // insert active cell styling here
+        }
+
+        // selecting new activeCell and assigning blinking class
+        activeCell = document.getElementsByClassName(`gridColumn${activeColumn} gridRow${activeRow}`);
+        activeCell.item(0).classList.toggle("blinking");
     };
 
     function rotateXCounter() {
         xAngle -= 27;
         xKnob.style.transform = `rotate(${xAngle}deg)`;
+
+        // preventing the active column from being set to beyond the canvas min
+        if (activeColumn === 1) {
+
+        } else {
+            activeColumn--;
+            activeCell.item(0).classList.toggle("blinking"); // removing blinking class from current activeCell
+            // insert active cell styling here
+        }
+
+        // selecting new activeCell and assigning blinking class
+        activeCell = document.getElementsByClassName(`gridColumn${activeColumn} gridRow${activeRow}`);
+        activeCell.item(0).classList.toggle("blinking");
     };
 
     if (directionX === "") {
