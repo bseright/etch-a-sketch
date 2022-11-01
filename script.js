@@ -261,11 +261,13 @@ function checkYRotation() {
 
     function rotateYClock() {
         yAngle += 28.8;
+        yAngle = Math.round(yAngle * 10)/10;
         yKnob.style.transform = `rotate(${yAngle}deg)`;
     };
 
     function rotateYCounter() {
         yAngle -= 28.8;
+        yAngle = Math.round(yAngle * 10)/10;
         yKnob.style.transform = `rotate(${yAngle}deg)`;
     };
 
