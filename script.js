@@ -142,12 +142,12 @@ secretDivX.addEventListener('wheel', function() {
 function checkXRotation() {
 
     function rotateXClock() {
-        xAngle += 30;
+        xAngle += 27;
         xKnob.style.transform = `rotate(${xAngle}deg)`;
     };
 
     function rotateXCounter() {
-        xAngle -= 30;
+        xAngle -= 27;
         xKnob.style.transform = `rotate(${xAngle}deg)`;
     };
 
@@ -260,12 +260,12 @@ secretDivY.addEventListener('wheel', function() {
 function checkYRotation() {
 
     function rotateYClock() {
-        yAngle += 30;
+        yAngle += 28.8;
         yKnob.style.transform = `rotate(${yAngle}deg)`;
     };
 
     function rotateYCounter() {
-        yAngle -= 30;
+        yAngle -= 28.8;
         yKnob.style.transform = `rotate(${yAngle}deg)`;
     };
 
