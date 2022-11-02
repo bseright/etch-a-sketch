@@ -41,6 +41,16 @@ activeCell.item(0).classList.toggle("blinking");
 
 //
 //
+// generating color selection
+//
+//
+let r = 4;
+let g = 170;
+let b = 109;
+let currentColor = `rgb(${r},${g},${b})`;
+
+//
+//
 // Initial state xKnob
 //
 //
@@ -157,7 +167,7 @@ function checkXRotation() {
         } else {
             activeColumn++;
             activeCell.item(0).classList.remove("blinking"); // removing blinking class from current activeCell
-            // insert active cell styling here
+            activeCell.item(0).style.backgroundColor = `${currentColor}`;
         }
 
         // selecting new activeCell and assigning blinking class
@@ -181,7 +191,7 @@ function checkXRotation() {
         } else {
             activeColumn--;
             activeCell.item(0).classList.remove("blinking"); // removing blinking class from current activeCell
-            // insert active cell styling here
+            activeCell.item(0).style.backgroundColor = `${currentColor}`;
         }
 
         // selecting new activeCell and assigning blinking class
@@ -312,7 +322,7 @@ function checkYRotation() {
         } else {
             activeRow++;
             activeCell.item(0).classList.remove("blinking"); // removing blinking class from current activeCell
-            // insert active cell styling here
+            activeCell.item(0).style.backgroundColor = `${currentColor}`;
         }
 
         // selecting new activeCell and assigning blinking class
@@ -331,7 +341,7 @@ function checkYRotation() {
         } else {
             activeRow--;
             activeCell.item(0).classList.remove("blinking"); // removing blinking class from current activeCell
-            // insert active cell styling here
+            activeCell.item(0).style.backgroundColor = `${currentColor}`;
         }
 
         // selecting new activeCell and assigning blinking class
