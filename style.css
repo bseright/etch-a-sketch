@@ -168,14 +168,14 @@ button {
 .largeKnob {
     height: 75px;
     position: absolute;
-    transition: all .2s ease-in-out;
+    transition: all .07s ease-in-out;
 }
 
 .largeKnobHover {
     height: 100px;
     margin-top: -10px;
     z-index: 1;
-    transition: all .2s ease-in-out;
+    transition: all .07s ease-in-out;
 }
 
 .xColumn {
@@ -189,14 +189,39 @@ button {
 .smallKnob {
     height: 60px;
     position: absolute;
-    transition: all .2s ease-in-out;
+    transition: all .07s ease-in-out;
 }
 
 .smallKnobHover {
     height: 80px;
     margin-top: -10px;
     z-index: 1;
-    transition: all .2s ease-in-out;
+    transition: all .07s ease-in-out;
+}
+
+.jiggle {
+    animation: jiggle 0.5s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+@keyframes jiggle {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
 
 .colorColumn {

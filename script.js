@@ -124,7 +124,7 @@ secretDivX.addEventListener('wheel', function() {
             directionX = "UP";
 
         } else {
-            
+
             directionX = "DOWN";
 
         } 
@@ -150,13 +150,13 @@ function checkXRotation() {
 
         } else {
             activeColumn++;
-            activeCell.item(0).classList.toggle("blinking"); // removing blinking class from current activeCell
+            activeCell.item(0).classList.remove("blinking"); // removing blinking class from current activeCell
             // insert active cell styling here
         }
 
         // selecting new activeCell and assigning blinking class
         activeCell = document.getElementsByClassName(`gridColumn${activeColumn} gridRow${activeRow}`);
-        activeCell.item(0).classList.toggle("blinking");
+        activeCell.item(0).classList.add("blinking");
     };
 
     function rotateXCounter() {
@@ -168,17 +168,22 @@ function checkXRotation() {
 
         } else {
             activeColumn--;
-            activeCell.item(0).classList.toggle("blinking"); // removing blinking class from current activeCell
+            activeCell.item(0).classList.remove("blinking"); // removing blinking class from current activeCell
             // insert active cell styling here
         }
 
         // selecting new activeCell and assigning blinking class
         activeCell = document.getElementsByClassName(`gridColumn${activeColumn} gridRow${activeRow}`);
-        activeCell.item(0).classList.toggle("blinking");
+        activeCell.item(0).classList.add("blinking");
     };
 
     if (directionX === "") {
         // leaving empty to avoid umprompted back scroll
+    } else if (xAngle === 1080 && directionX === "DOWN" || xAngle === 0 && directionX === "UP") {
+        xKnob.classList.add("jiggle");
+        setTimeout(() => {
+            xKnob.classList.remove("jiggle"); 
+        }, 500); // be sure animation has time to run before class is removed
     } else if (directionX === "DOWN") {
         rotateXClock();
     } else {
