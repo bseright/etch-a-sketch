@@ -142,7 +142,13 @@ secretDivX.addEventListener('wheel', function() {
 function checkXRotation() {
 
     function rotateXClock() {
-        xAngle += 27;
+        xAngle += 27.6923;
+        xAngle = Math.round(xAngle * 10000)/10000;
+
+        if (xAngle >= 1079 && 1081 >= xAngle) {
+            xAngle = 1080;
+        }
+
         xKnob.style.transform = `rotate(${xAngle}deg)`;
 
         // preventing the active column from being set to beyond the canvas max
@@ -160,7 +166,13 @@ function checkXRotation() {
     };
 
     function rotateXCounter() {
-        xAngle -= 27;
+        xAngle -= 27.6923;
+        xAngle = Math.round(xAngle * 10000)/10000;
+
+        if (xAngle >= -1 && 1 >= xAngle) {
+            xAngle = 0;
+        }
+
         xKnob.style.transform = `rotate(${xAngle}deg)`;
 
         // preventing the active column from being set to beyond the canvas min
@@ -291,19 +303,49 @@ secretDivY.addEventListener('wheel', function() {
 function checkYRotation() {
 
     function rotateYClock() {
-        yAngle += 28.8;
+        yAngle += 30;
         yAngle = Math.round(yAngle * 10)/10;
         yKnob.style.transform = `rotate(${yAngle}deg)`;
+
+        if (activeRow === 25) {
+
+        } else {
+            activeRow++;
+            activeCell.item(0).classList.remove("blinking"); // removing blinking class from current activeCell
+            // insert active cell styling here
+        }
+
+        // selecting new activeCell and assigning blinking class
+        activeCell = document.getElementsByClassName(`gridColumn${activeColumn} gridRow${activeRow}`);
+        activeCell.item(0).classList.add("blinking");
     };
 
     function rotateYCounter() {
-        yAngle -= 28.8;
+        yAngle -= 30;
         yAngle = Math.round(yAngle * 10)/10;
         yKnob.style.transform = `rotate(${yAngle}deg)`;
+
+        // preventing the active column from being set to beyond the canvas min
+        if (activeRow === 1) {
+
+        } else {
+            activeRow--;
+            activeCell.item(0).classList.remove("blinking"); // removing blinking class from current activeCell
+            // insert active cell styling here
+        }
+
+        // selecting new activeCell and assigning blinking class
+        activeCell = document.getElementsByClassName(`gridColumn${activeColumn} gridRow${activeRow}`);
+        activeCell.item(0).classList.add("blinking");
     };
 
     if (directionY === "") {
         // leaving empty to avoid umprompted back scroll
+    } else if (yAngle === 720 && directionY === "DOWN" || yAngle === 0 && directionY === "UP") {
+        yKnob.classList.add("jiggle");
+        setTimeout(() => {
+            yKnob.classList.remove("jiggle"); 
+        }, 500); // be sure animation has time to run before class is removed
     } else if (directionY === "DOWN") {
         rotateYClock();
     } else {
