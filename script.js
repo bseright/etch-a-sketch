@@ -1,5 +1,3 @@
-//
-//
 // creating grid
 //
 //
@@ -28,8 +26,6 @@ function makeDivs(numDivs) {
 
 makeDivs(1000);
 
-//
-//
 // creating function to obtain active row and column with knob interaction
 //
 //
@@ -39,8 +35,6 @@ let activeCell = document.getElementsByClassName(`gridColumn${activeColumn} grid
 
 activeCell.item(0).classList.toggle("blinking");
 
-//
-//
 // generating color selection
 //
 //
@@ -51,8 +45,29 @@ let currentColor = `rgb(${r},${g},${b})`;
 
 let colorSelection = document.querySelector(".colorSelection");
 
+// adding function to clear button
 //
 //
+const clear = document.querySelector(".clearButton");
+
+clear.addEventListener('click', function() {
+    for (const cell of canvas.children) {
+        cell.style.backgroundColor = "rgb(252,252,252)"
+    }
+});
+
+// adding function to random button
+//
+//
+const random = document.querySelector(".randomButton");
+
+random.addEventListener('click', function() {
+    function randomNumber() { 
+        console.log(Math.random());
+    } 
+    randomNumber();
+})
+
 // Initial state xKnob
 //
 //
@@ -67,8 +82,6 @@ let previousTopX;
 let xKnob = document.querySelector(".xKnob");
 let xAngle = 0;
 
-//
-//
 // assigning hover animations to knobs when secretDivs are hovered
 // xKnob hover animations
 //
@@ -217,8 +230,6 @@ function checkXRotation() {
 };
 
 
-//
-//
 // Initial state yKnob
 //
 // 
@@ -367,8 +378,6 @@ function checkYRotation() {
 };
 
 
-//
-//
 // Initial state rKnob
 //
 // 
@@ -517,8 +526,6 @@ function checkRRotation() {
     
 };
 
-//
-//
 // Initial state gKnob
 //
 // 
@@ -668,8 +675,6 @@ function checkGRotation() {
     
 };
 
-//
-//
 // Initial state gKnob
 //
 // 
