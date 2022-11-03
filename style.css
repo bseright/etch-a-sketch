@@ -168,7 +168,7 @@ button {
 }
 
 .bKnob {
-    transform: rotate(100deg);
+    transform: rotate(560deg);
 }
 
 .xColumn p, .yColumn p {
@@ -244,7 +244,7 @@ button {
     width: 198px;
     height: 10px;
     background-color: rgb(20, 160, 100);
-    margin-top: 0px;
+    margin-bottom: 5px;
     border-radius: 10px;
 }
 

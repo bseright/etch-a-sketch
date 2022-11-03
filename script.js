@@ -682,7 +682,7 @@ let currentTopB;
 let previousTopB;
 
 let bKnob = document.querySelector(".bKnob");
-let bAngle = 100;
+let bAngle = 560;
 
 // gKnob hover animations
 secretDivB.addEventListener('mouseover', function() {
@@ -768,13 +768,47 @@ secretDivB.addEventListener('wheel', function() {
 function checkBRotation() {
 
     function rotateBClock() {
+
+        if (bAngle === 1440) {
+
+            bKnob.classList.add("jiggle");
+            setTimeout(() => {
+                bKnob.classList.remove("jiggle"); 
+            }, 500);
+
+        } else {
+
         bAngle += 20;
+        b += 3.54;
+        b = Math.round(b * 100)/100
+
         bKnob.style.transform = `rotate(${bAngle}deg)`;
+        currentColor = `rgb(${r},${g},${b})`;
+        colorSelection.style.backgroundColor = currentColor;
+
+        }
     };
 
     function rotateBCounter() {
+
+        if (bAngle === 0) {
+
+            bKnob.classList.add("jiggle");
+            setTimeout(() => {
+                bKnob.classList.remove("jiggle"); 
+            }, 500);
+
+        } else {
+
         bAngle -= 20;
+        b -= 3.54;
+        b = Math.round(b * 100)/100;
+
         bKnob.style.transform = `rotate(${bAngle}deg)`;
+        currentColor = `rgb(${r},${g},${b})`;
+        colorSelection.style.backgroundColor = currentColor;
+
+        }
     };
 
     if (directionB === "") {
