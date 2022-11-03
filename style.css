@@ -37,15 +37,15 @@ body {
     grid-template-columns: repeat(auto-fill, 20px);
     height: 500px;
     width: 800px;
-    background-color: rgb(32, 32, 32);
-    box-shadow: 3px 3px 10px 1px rgb(141, 141, 141);
+    background-color: rgb(32,32,32);
+    box-shadow: 3px 3px 10px 1px rgb(141,141,141);
 }
 
 .canvas > div {
     height: 20px;
     width: 20px;
     margin: 0;
-    background-color: rgb(252, 252, 252);
+    background-color: rgb(252,252,252);
 }
 
 .blinking {
@@ -54,10 +54,10 @@ body {
 }
 
 @keyframes blinking{
-    0% {background-color: rgb(4,170,109);}
-    49% {background-color: rgb(4,170,109);}
-    50% {background-color: rgb(252, 252, 252)}
-   100% {background-color: rgb(252, 252, 252)}
+    0% {background-color: rgb(20, 160, 100)}
+    49% {background-color: rgb(20, 160, 100)}
+    50% {background-color: rgb(252,252,252)}
+   100% {background-color: rgb(252252,252)}
 }
 
 .detectScroll {
@@ -112,12 +112,12 @@ body {
 }
 
 button {
-    background-color: rgb(4,170,109);
+    background-color: rgb(20, 160, 100);
     color: white;
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 1px;
-    border: 5px solid rgb(4,170,109);
+    border: 5px solid rgb(20, 160, 100);
     border-radius: 5px;
     height: 45px;
 }
@@ -157,6 +157,18 @@ button {
 
 .colorKnobs p {
     top: 11px;
+}
+
+.rKnob {
+    transform: rotate(120deg);
+}
+
+.gKnob {
+    transform: rotate(160deg);
+}
+
+.bKnob {
+    transform: rotate(100deg);
 }
 
 .xColumn p, .yColumn p {
@@ -231,7 +243,7 @@ button {
 .colorSelection {
     width: 198px;
     height: 10px;
-    background-color: rgb(4,170,109);
+    background-color: rgb(20, 160, 100);
     margin-top: 0px;
     border-radius: 10px;
 }
