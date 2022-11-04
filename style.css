@@ -1,21 +1,58 @@
+@font-face {
+    font-family: neon;
+    src: url(fonts/neon.ttf);
+  }
+
 body {
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: Roboto, sans-serif;
+    background-color: rgba(223, 223, 223, 0.63);
 }
 
 .header {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100px;
+    font-family: neon;
+    font-weight: 0;
+    font-size: 50px;
+}
+
+.header p {
+    position: absolute;
+    z-index: 55555;
+    letter-spacing: -1px;
+}
+
+.A {
+    color: rgb(200, 255, 71);
 }
 
 .header img {
-    height: 38px;
-    opacity: .8;
+    position: relative;
+    right: 31px;
+    top: 5px;
+    height: 138px;
+    width: auto;
+    transform: rotate(180deg);
+    filter: invert(58%) sepia(72%) saturate(6969%) hue-rotate(138deg) brightness(100%) contrast(84%);
+}
+
+.rotate {
+    animation: rotation 13s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
 }
 
 .main {
@@ -25,11 +62,6 @@ body {
     gap: 20px;
     justify-content: center;
     align-items: center;
-}
-
-.header h1 {
-    letter-spacing: 1px;
-    color:rgb(32, 32, 32);
 }
 
 .canvas {
