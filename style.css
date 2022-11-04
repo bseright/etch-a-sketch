@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: Roboto, sans-serif;
-    background-color: rgba(223, 223, 223, 0.63);
+    background-color: rgba(235, 235, 235, 0.63);
 }
 
 .header {
@@ -35,7 +35,7 @@ body {
 .header img {
     position: relative;
     right: 31px;
-    top: 5px;
+    top: 9px;
     height: 138px;
     width: auto;
     transform: rotate(180deg);
