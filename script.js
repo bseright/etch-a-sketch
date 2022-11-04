@@ -51,6 +51,11 @@ let colorSelection = document.querySelector(".colorSelection");
 const clear = document.querySelector(".clearButton");
 
 clear.addEventListener('click', function() {
+    canvas.classList.add("jiggle");
+    setTimeout(() => {
+        canvas.classList.remove("jiggle"); 
+    }, 500); // be sure animation has time to run before class is removed
+
     for (const cell of canvas.children) {
         cell.style.backgroundColor = "rgb(252,252,252)"
     }
@@ -62,10 +67,27 @@ clear.addEventListener('click', function() {
 const random = document.querySelector(".randomButton");
 
 random.addEventListener('click', function() {
-    function randomNumber() { 
-        console.log(Math.random());
-    } 
-    randomNumber();
+
+    function getRandomColor() {
+        let withErrors = Math.floor(Math.random() * 72) * 3.54;
+        return (withErrors * 100) / 100;
+    };
+
+    r = getRandomColor();
+    g = getRandomColor();
+    b = getRandomColor();
+
+    currentColor = `rgb(${r},${g},${b})`;
+
+    rAngle = ((r/3.54 * 20) * 100) / 100;
+    gAngle = ((g/3.54 * 20) * 100) / 100;
+    bAngle = ((b/3.54 * 20) * 100) / 100;
+
+    rKnob.style.transform = `rotate(${rAngle}deg)`;
+    gKnob.style.transform = `rotate(${gAngle}deg)`;
+    bKnob.style.transform = `rotate(${bAngle}deg)`;
+
+    colorSelection.style.backgroundColor = currentColor;
 })
 
 // Initial state xKnob
