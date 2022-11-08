@@ -36,7 +36,7 @@
 - Smoother/better animation.
 
 ## Contact
-Created by [@bseright](https://github.com/bseright)
+Created by Britain Seright ([@bseright](https://github.com/bseright))
 
-Feel free to contact me!
+Feel free to contact me!  
 Email: britainseright@gmail.com
