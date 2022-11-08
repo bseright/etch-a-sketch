@@ -31,6 +31,7 @@
 
 ## Room for Improvement
 - Adding "How to Use" tooltips or description.
+- Reduce very bloated JS.
 - Ending functions and animations when another event is detected. 
 - Design improvements... I am not terribly excited about this design.
 - Smoother/better animation.
