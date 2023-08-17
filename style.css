@@ -12,47 +12,8 @@ body {
     background-color: rgba(235, 235, 235, 0.63);
 }
 
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100px;
-    font-family: neon;
-    font-weight: 0;
-    font-size: 50px;
-}
-
-.header p {
-    position: absolute;
-    z-index: 55555;
-    letter-spacing: -1px;
-}
-
-.A {
-    color: rgb(200, 255, 71);
-}
-
-.header img {
-    position: relative;
-    right: 31px;
-    top: 9px;
-    height: 138px;
-    width: auto;
-    transform: rotate(180deg);
-    filter: invert(58%) sepia(72%) saturate(6969%) hue-rotate(138deg) brightness(100%) contrast(84%);
-}
-
-.rotate {
-    animation: rotation 13s infinite linear;
-}
-
-@keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
+p {
+    margin-top: 20px;
 }
 
 .main {
